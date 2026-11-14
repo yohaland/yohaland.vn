@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YOHALAND – Phát triển bất động sản dòng tiền</title>
+<meta name="description" content="YOHALAND thiết kế, hoàn thiện nội thất, setup và vận hành tòa nhà cho thuê tại Hà Nội. Một đầu mối từ bản vẽ đến dòng tiền.">
+<link rel="canonical" href="https://yohaland.vn/">
+<meta name="theme-color" content="#0F3D2E">
+<!-- Thẻ chia sẻ: hiển thị tiêu đề, mô tả, ảnh khi dán link vào Zalo/Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="YOHALAND">
+<meta property="og:url" content="https://yohaland.vn/">
+<meta property="og:title" content="YOHALAND – Xây tòa cho thuê, tính dòng tiền ngay từ bản vẽ">
+<meta property="og:description" content="Thiết kế, hoàn thiện nội thất, setup và vận hành tòa nhà cho thuê tại Hà Nội. Đặt lịch tư vấn với kiến trúc sư.">
+<meta property="og:image" content="https://yohaland.vn/og-image.jpg"><!-- CẦN: ảnh 1200×630 px làm từ logo -->
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Biểu tượng tạm trên tab trình duyệt; thay bằng logo thật khi có -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F3D2E'/%3E%3Cpath d='M7 15l9-7 9 7M9 14v10h14V14' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#0F3D2E; --green-2:#1B5A44; --green-soft:#E7EFEA;
+  --ink:#16201C; --muted:#4E5A55; --line:#D9DED9; --ground:#F6F6F2; --white:#fff;
+  --radius:10px; --max:1160px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;font-size:16px}
+a{color:var(--green)}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.25;margin:0 0 .5em;color:var(--ink)}
+h1{font-size:clamp(2rem,4.6vw,3.2rem);font-weight:700;letter-spacing:-.01em}
+h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700}
+h3{font-size:1.1rem;font-weight:600}
+p{margin:0 0 1em}
+.eyebrow{font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--green-2);margin-bottom:.8em}
+section{padding:80px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:999px;font-weight:600;font-size:1rem;text-decoration:none;border:2px solid var(--green);cursor:pointer;font-family:inherit}
+.btn-primary{background:var(--green);color:var(--white)}
+.btn-primary:hover{background:var(--green-2);border-color:var(--green-2)}
+.btn-primary:disabled{opacity:.6;cursor:wait}
+.btn-ghost{background:transparent;color:var(--green)}
+.btn-ghost:hover{background:var(--green-soft)}
+.btn-light{background:var(--white);color:var(--green);border-color:var(--white)}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:saturate(1.2) blur(6px)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--green);font-weight:700;letter-spacing:.14em;font-size:1.05rem}
+.logo-mark{width:36px;height:36px;border-radius:8px;background:var(--green);display:grid;place-items:center}
+.nav-links{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+.nav-links a{text-decoration:none;color:var(--muted);font-weight:500;font-size:.95rem}
+.nav-links a:hover{color:var(--green)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.phone{font-weight:600;color:var(--green);text-decoration:none;white-space:nowrap}
+@media (max-width:900px){.nav-links{display:none}}
+@media (max-width:520px){.phone{display:none}}
+
+/* hero */
+.hero{background:var(--green);color:var(--white);padding:96px 0 88px}
+.hero h1{color:var(--white);max-width:16ch}
+.hero .eyebrow{color:#A9D3BF}
+.hero p.lead{font-size:1.15rem;color:#DCEAE3;max-width:56ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero .btn-ghost{color:var(--white);border-color:rgba(255,255,255,.6)}
+.hero .btn-ghost:hover{background:rgba(255,255,255,.08)}
+.hero-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:56px;max-width:760px}
+.fact{border-top:1px solid rgba(255,255,255,.25);padding-top:14px}
+.fact b{display:block;font-size:1.6rem;font-weight:700;color:var(--white)}
+.fact span{font-size:.9rem;color:#C7DCD2}
+@media (max-width:640px){.hero-facts{grid-template-columns:1fr}}
+
+/* audiences */
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media (max-width:860px){.grid-3,.grid-2{grid-template-columns:1fr}}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.card .num{font-size:.8rem;font-weight:700;color:var(--green-2);letter-spacing:.1em}
+.card ul{margin:.4em 0 0;padding-left:1.1em;color:var(--muted)}
+.card li{margin:.25em 0}
+.muted{color:var(--muted)}
+.bg-ground{background:var(--ground)}
+.section-head{max-width:720px;margin-bottom:40px}
+
+/* services */
+.svc{display:flex;flex-direction:column;gap:6px}
+.svc .tag{align-self:flex-start;font-size:.75rem;font-weight:600;color:var(--green);background:var(--green-soft);border-radius:999px;padding:3px 10px;margin-bottom:6px}
+
+/* why */
+.why{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:start}
+@media (max-width:860px){.why{grid-template-columns:1fr}}
+.why-list{display:grid;gap:18px}
+.why-item{display:grid;grid-template-columns:40px 1fr;gap:14px}
+.why-item svg{width:28px;height:28px;color:var(--green)}
+.quote{background:var(--green);color:var(--white);border-radius:var(--radius);padding:32px}
+.quote p{font-size:1.15rem;color:var(--white)}
+.quote small{color:#C7DCD2}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+@media (max-width:960px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+.step{border-top:3px solid var(--green);padding-top:14px}
+.step b{display:block;color:var(--green);font-size:.85rem;margin-bottom:4px}
+
+/* calculator */
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+@media (max-width:860px){.calc{grid-template-columns:1fr}}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.field label{font-weight:600;font-size:.95rem}
+.field .hint{font-size:.82rem;color:var(--muted)}
+.field input,.field select,.field textarea{font:inherit;min-height:46px;padding:10px 12px;border:1px solid #B9C2BD;border-radius:8px;background:var(--white);color:var(--ink)}
+.field textarea{min-height:96px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:3px solid #9CCBB3;outline-offset:1px;border-color:var(--green)}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:.95rem;margin-bottom:16px}
+.check input{width:20px;height:20px;margin-top:3px;accent-color:var(--green);flex:none}
+.check.small{font-size:.88rem;color:var(--muted)}
+.result{background:var(--green);color:var(--white);border-radius:var(--radius);padding:28px}
+.result h3{color:var(--white)}
+.result-row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.18);font-size:.98rem}
+.result-row span:last-child{font-weight:600;white-space:nowrap}
+.result-big{margin-top:18px}
+.result-big div{font-size:.9rem;color:#C7DCD2}
+.result-big b{font-size:2rem}
+.note{font-size:.82rem;color:#C7DCD2;margin-top:16px}
+
+/* projects */
+.proj{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--white)}
+.proj-img{aspect-ratio:4/3;background:repeating-linear-gradient(45deg,#E9ECE8,#E9ECE8 12px,#F2F4F1 12px,#F2F4F1 24px);display:grid;place-items:center;color:var(--muted);font-size:.9rem;font-weight:600}
+.proj-body{padding:18px}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:40px}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
+.contact-actions{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 20px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:560px){.form-row{grid-template-columns:1fr}}
+.form-msg{display:none;margin-top:14px;padding:14px 16px;border-radius:8px;background:var(--green-soft);color:var(--green);font-weight:500}
+.form-msg.show{display:block}
+.err{color:#A12C2C;font-size:.85rem}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+
+footer{background:#0B2E22;color:#C7DCD2;padding:48px 0 32px;font-size:.92rem}
+footer a{color:#E3EFE9}
+.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}
+@media (max-width:760px){.foot{grid-template-columns:1fr}}
+.foot h3{color:var(--white);font-size:1rem}
+.privacy{margin-top:28px;border-top:1px solid rgba(255,255,255,.12);padding-top:18px}
+.privacy summary{cursor:pointer;color:var(--white);font-weight:600}
+.privacy div{max-width:80ch;margin-top:10px;font-size:.88rem}
+.copy{border-top:1px solid rgba(255,255,255,.12);margin-top:24px;padding-top:18px;font-size:.82rem}
+
+.float-bar{position:fixed;right:16px;bottom:16px;z-index:30;display:flex;gap:8px}
+.float-bar .btn{box-shadow:0 6px 18px rgba(15,61,46,.28)}
+@media (min-width:900px){.float-bar{display:none}}
+</style>
+<script>
+  // ===== Đo lường: dán Mã đo lường Google Analytics 4 (dạng G-XXXXXXX) vào đây khi đã tạo =====
+  var GA_ID = "";
+  if (GA_ID) {
+    var s = document.createElement('script'); s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ dataLayer.push(arguments); };
+    gtag('js', new Date()); gtag('config', GA_ID);
+  }
+</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="YOHALAND – về đầu trang">
+      <span class="logo-mark" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
+      </span>
+      YOHALAND
+    </a>
+    <ul class="nav-links">
+      <li><a href="#dich-vu">Dịch vụ</a></li>
+      <li><a href="#quy-trinh">Quy trình</a></li>
+      <li><a href="#tinh-dong-tien">Tính dòng tiền</a></li>
+      <li><a href="#du-an">Dự án</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="phone" href="tel:0988259320" data-track="goi_dien">0988 259 320</a>
+      <a class="btn btn-primary" href="#lien-he">Đặt lịch tư vấn</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Phát triển bất động sản dòng tiền</div>
+    <h1>Xây tòa cho thuê, tính dòng tiền ngay từ bản vẽ.</h1>
+    <p class="lead">YOHALAND thiết kế, hoàn thiện nội thất, setup và vận hành tòa nhà cho thuê tại Hà Nội. Một đầu mối, do kiến trúc sư chủ trì – người đang trực tiếp vận hành các tòa cho thuê.</p>
+    <div class="hero-actions">
+      <a class="btn btn-light" href="#lien-he">Đặt lịch tư vấn với kiến trúc sư</a>
+      <a class="btn btn-ghost" href="#tinh-dong-tien">Tính thử dòng tiền</a>
+    </div>
+    <div class="hero-facts">
+      <div class="fact"><b>[SỐ] phòng</b><span>đang trực tiếp vận hành tại Hà Nội</span></div>
+      <div class="fact"><b>[SỐ] tòa</b><span>đã thiết kế, thi công nội thất</span></div>
+      <div class="fact"><b>1 đầu mối</b><span>từ phương án đến vận hành</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-ground">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Chúng tôi làm việc với ai</div>
+      <h2>Bạn đang ở giai đoạn nào?</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="num">01</div>
+        <h3>Có đất, chuẩn bị xây</h3>
+        <ul>
+          <li>Đất này xây được bao nhiêu phòng?</li>
+          <li>Vốn bao nhiêu, bao lâu hoàn vốn?</li>
+          <li>Thủ tục xin phép, PCCC thế nào?</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <h3>Tòa đang xây dựng</h3>
+        <ul>
+          <li>Chọn nội thất bền, hợp giá thuê</li>
+          <li>Setup để mở bán đúng hạn</li>
+          <li>Tìm người vận hành tin cậy</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <h3>Tòa đang cho thuê nhưng khó lấp đầy</h3>
+        <ul>
+          <li>Phòng trống lâu, giá thuê bị ép</li>
+          <li>Nội thất xuống cấp, nhiều phản ánh</li>
+          <li>Không có thời gian quản lý</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="dich-vu">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Dịch vụ</div>
+      <h2>Chọn từng hạng mục hoặc trọn chuỗi</h2>
+      <p class="muted">Mỗi dịch vụ có phạm vi, sản phẩm bàn giao và mốc nghiệm thu rõ ràng trong hợp đồng.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card svc"><span class="tag">Trước khi xây</span><h3>Tư vấn hiệu quả đầu tư</h3><p class="muted">Khảo sát vị trí, nhóm khách thuê, số phòng tối ưu; ước tính vốn, doanh thu, dòng tiền theo 3 kịch bản.</p></div>
+      <div class="card svc"><span class="tag">Thiết kế</span><h3>Thiết kế kiến trúc và công năng</h3><p class="muted">Mặt bằng, cơ cấu phòng, mặt đứng, phối cảnh. Phối hợp kết cấu, cơ điện, PCCC theo tiêu chuẩn.</p></div>
+      <div class="card svc"><span class="tag">Thủ tục</span><h3>Hồ sơ xin phép xây dựng trọn gói</h3><p class="muted">Chuẩn bị và theo dõi hồ sơ xin cấp phép xây dựng thay chủ nhà.</p></div>
+      <div class="card svc"><span class="tag">Phần thô</span><h3>Quản lý dự án, kết nối nhà thầu thô</h3><p class="muted">Giới thiệu nhà thầu phần thô, giám sát tiến độ và chất lượng theo hồ sơ thiết kế.</p></div>
+      <div class="card svc"><span class="tag">Hoàn thiện</span><h3>Thi công nội thất cho thuê</h3><p class="muted">Vật liệu bền, dễ sửa chữa, phù hợp giá thuê. Nghiệm thu theo giai đoạn, bảo hành theo hợp đồng.</p></div>
+      <div class="card svc"><span class="tag">Khai thác</span><h3>Setup và vận hành</h3><p class="muted">Bảng giá, nội quy, ảnh chụp, kênh cho thuê; quản lý khách thuê, thu tiền, bảo trì, báo cáo định kỳ.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-ground">
+  <div class="wrap why">
+    <div>
+      <div class="eyebrow">Vì sao chọn YOHALAND</div>
+      <h2>Thiết kế bởi người đang vận hành</h2>
+      <div class="why-list">
+        <div class="why-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-5h6v5"/></svg>
+          <div><h3>Kiến trúc sư chủ trì</h3><p class="muted">Hiểu vấn đề chủ nhà gặp phải từ lúc lên phương án, không chỉ làm bản vẽ đẹp.</p></div>
+        </div>
+        <div class="why-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>
+          <div><h3>Kinh nghiệm vận hành thực tế</h3><p class="muted">Mỗi quyết định thiết kế, vật liệu đều được cân nhắc theo chi phí vận hành và khả năng lấp đầy.</p></div>
+        </div>
+        <div class="why-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h10"/></svg>
+          <div><h3>Số liệu minh bạch</h3><p class="muted">Tách rõ chi phí xây dựng, nội thất, vận hành; phương án có kịch bản thận trọng, không chỉ kịch bản đẹp.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="quote">
+      <p>“Một tòa cho thuê hiệu quả bắt đầu từ mặt bằng: số phòng, diện tích, lối đi, vị trí cầu thang. Sửa trên bản vẽ rẻ hơn rất nhiều so với sửa khi đã cho thuê.”</p>
+      <small>KTS Nguyễn Trung Phương – Giám đốc YOHALAND</small>
+    </div>
+  </div>
+</section>
+
+<section id="quy-trinh">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Quy trình</div>
+      <h2>5 bước từ mảnh đất đến dòng tiền</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><b>Bước 1</b><h3>Khảo sát và tư vấn</h3><p class="muted">Xem đất hoặc tòa, nghe mục tiêu đầu tư.</p></div>
+      <div class="step"><b>Bước 2</b><h3>Phương án và dòng tiền</h3><p class="muted">Số phòng, vốn, doanh thu dự kiến theo 3 kịch bản.</p></div>
+      <div class="step"><b>Bước 3</b><h3>Thiết kế và thủ tục</h3><p class="muted">Hồ sơ thiết kế, phối hợp bộ môn, xin phép.</p></div>
+      <div class="step"><b>Bước 4</b><h3>Thi công hoàn thiện</h3><p class="muted">Nội thất, nghiệm thu theo giai đoạn.</p></div>
+      <div class="step"><b>Bước 5</b><h3>Setup và vận hành</h3><p class="muted">Đưa tòa vào khai thác, báo cáo hằng tháng.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="tinh-dong-tien" class="bg-ground">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Công cụ</div>
+      <h2>Tính thử dòng tiền tòa cho thuê</h2>
+      <p class="muted">Nhập số liệu dự kiến để xem nhanh doanh thu và thời gian hoàn vốn. Đây là ví dụ minh họa; kết quả thực tế phụ thuộc vị trí, thiết kế và vận hành.</p>
+    </div>
+    <div class="calc">
+      <form class="card" id="calc-form" novalidate>
+        <div class="field">
+          <label for="c-rooms">Số phòng cho thuê</label>
+          <input id="c-rooms" type="number" inputmode="numeric" min="1" step="1" value="15">
+        </div>
+        <div class="field">
+          <label for="c-rent">Giá thuê bình quân (triệu đồng/phòng/tháng)</label>
+          <input id="c-rent" type="number" inputmode="decimal" min="0" step="0.1" value="4">
+        </div>
+        <div class="field">
+          <label for="c-occ">Tỷ lệ lấp đầy (%)</label>
+          <input id="c-occ" type="number" inputmode="numeric" min="0" max="100" step="1" value="90">
+          <span class="hint">Nên để thấp hơn 100% vì có thời gian trống giữa hai khách thuê.</span>
+        </div>
+        <div class="field">
+          <label for="c-opex">Chi phí vận hành (% doanh thu)</label>
+          <input id="c-opex" type="number" inputmode="numeric" min="0" max="100" step="1" value="20">
+          <span class="hint">Điện nước khu vực chung, vệ sinh, bảo trì, internet, nhân sự.</span>
+        </div>
+        <div class="field">
+          <label for="c-capex">Vốn xây dựng và nội thất (triệu đồng)</label>
+          <input id="c-capex" type="number" inputmode="numeric" min="0" step="50" value="5000">
+          <span class="hint">Không gồm giá trị đất.</span>
+        </div>
+        <label class="check"><input id="c-mgmt" type="checkbox" checked> Thuê đơn vị vận hành (phí 10% doanh thu thực thu)</label>
+      </form>
+      <div class="result" aria-live="polite">
+        <h3>Kết quả ước tính</h3>
+        <div class="result-row"><span>Doanh thu/tháng</span><span id="r-rev">–</span></div>
+        <div class="result-row"><span>Chi phí vận hành/tháng</span><span id="r-opex">–</span></div>
+        <div class="result-row"><span>Phí quản lý vận hành/tháng</span><span id="r-mgmt">–</span></div>
+        <div class="result-row"><span>Dòng tiền ròng/tháng</span><span id="r-net">–</span></div>
+        <div class="result-row"><span>Dòng tiền ròng/năm</span><span id="r-year">–</span></div>
+        <div class="result-big"><div>Thời gian hoàn vốn ước tính</div><b id="r-payback">–</b></div>
+        <p class="note">Chưa tính thuế, lãi vay, thời gian xây dựng và thời gian lấp đầy ban đầu. Đặt lịch để kiến trúc sư tính chi tiết theo mảnh đất của bạn.</p>
+        <a class="btn btn-light" href="#lien-he">Nhờ kiến trúc sư tính chi tiết</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="du-an">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Dự án</div>
+      <h2>Một số công trình đã thực hiện</h2>
+    </div>
+    <div class="grid-3">
+      <div class="proj"><div class="proj-img">[ẢNH DỰ ÁN 1]</div><div class="proj-body"><h3>[Tên dự án]</h3><p class="muted">[Quận] · [Số phòng] phòng · [Hạng mục: thiết kế / nội thất / vận hành]</p></div></div>
+      <div class="proj"><div class="proj-img">[ẢNH DỰ ÁN 2]</div><div class="proj-body"><h3>[Tên dự án]</h3><p class="muted">[Quận] · [Số phòng] phòng · [Hạng mục]</p></div></div>
+      <div class="proj"><div class="proj-img">[ẢNH DỰ ÁN 3]</div><div class="proj-body"><h3>[Tên dự án]</h3><p class="muted">[Quận] · [Số phòng] phòng · [Hạng mục]</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="lien-he" class="bg-ground">
+  <div class="wrap contact">
+    <div>
+      <div class="eyebrow">Liên hệ</div>
+      <h2>Đặt lịch tư vấn với kiến trúc sư</h2>
+      <p class="muted">Để lại thông tin, YOHALAND gọi lại trong vòng 1 ngày làm việc. Buổi tư vấn đầu tiên giúp bạn biết mảnh đất hoặc tòa nhà của mình nên khai thác theo hướng nào.</p>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="tel:0988259320" data-track="goi_dien">Gọi 0988 259 320</a>
+        <a class="btn btn-ghost" href="https://zalo.me/0988259320" target="_blank" rel="noopener" data-track="nhan_zalo">Nhắn Zalo</a>
+      </div>
+      <p><b>Website:</b> yohaland.vn</p>
+      <p><b>Văn phòng:</b> [ĐỊA CHỈ VĂN PHÒNG], Hà Nội</p>
+    </div>
+    <form class="card" id="lead-form" novalidate>
+      <div class="form-row">
+        <div class="field"><label for="f-name">Họ và tên *</label><input id="f-name" name="ho_ten" autocomplete="name" required maxlength="100"></div>
+        <div class="field"><label for="f-phone">Số điện thoại *</label><input id="f-phone" name="so_dien_thoai" type="tel" autocomplete="tel" inputmode="tel" required maxlength="20"></div>
+      </div>
+      <div class="field">
+        <label for="f-need">Bạn đang ở giai đoạn nào? *</label>
+        <select id="f-need" name="giai_doan" required>
+          <option value="">– Chọn –</option>
+          <option>Có đất, chuẩn bị xây</option>
+          <option>Tòa đang xây dựng</option>
+          <option>Tòa đang cho thuê, muốn cải thiện</option>
+          <option>Khác</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="f-area">Diện tích đất (m²)</label><input id="f-area" name="dien_tich" type="number" inputmode="numeric" min="0"></div>
+        <div class="field"><label for="f-loc">Vị trí (quận/huyện)</label><input id="f-loc" name="vi_tri" maxlength="100"></div>
+      </div>
+      <div class="field">
+        <label for="f-time">Thời điểm dự kiến triển khai</label>
+        <select id="f-time" name="thoi_diem">
+          <option value="">– Chọn –</option>
+          <option>Trong 3 tháng</option>
+          <option>3–6 tháng</option>
+          <option>6–12 tháng</option>
+          <option>Chưa xác định</option>
+        </select>
+      </div>
+      <div class="field"><label for="f-note">Ghi chú</label><textarea id="f-note" name="ghi_chu" maxlength="1000"></textarea></div>
+      <!-- Ô bẫy chống spam: người thật không nhìn thấy, máy spam thường tự điền -->
+      <div class="hp" aria-hidden="true"><label for="f-web">Website</label><input id="f-web" name="website" tabindex="-1" autocomplete="off"></div>
+      <label class="check small"><input id="f-consent" name="dong_y" type="checkbox" value="Có" required> <span>Tôi đồng ý để Công ty Cổ phần Yohaland sử dụng thông tin trên để liên hệ tư vấn, theo <a href="#bao-mat">thông báo xử lý dữ liệu cá nhân</a>.</span></label>
+      <p class="err" id="f-err" role="alert"></p>
+      <button class="btn btn-primary" type="submit" id="f-submit">Gửi yêu cầu tư vấn</button>
+      <div class="form-msg" id="f-msg" role="status"></div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <h3>CÔNG TY CỔ PHẦN YOHALAND</h3>
+        <p>Phát triển bất động sản dòng tiền: thiết kế, hoàn thiện nội thất, setup và vận hành tòa nhà cho thuê.</p>
+        <p>MST: [MÃ SỐ THUẾ]<br>Địa chỉ: [ĐỊA CHỈ ĐĂNG KÝ]</p>
+      </div>
+      <div>
+        <h3>Liên hệ</h3>
+        <p>Hotline/Zalo: <a href="tel:0988259320" data-track="goi_dien">0988 259 320</a><br>yohaland.vn</p>
+      </div>
+      <div>
+        <h3>Kênh</h3>
+        <p>[YouTube]<br>[TikTok]<br>[Facebook]</p>
+      </div>
+    </div>
+    <details class="privacy" id="bao-mat">
+      <summary>Thông báo xử lý dữ liệu cá nhân</summary>
+      <div>
+        <p><b>Bên xử lý:</b> Công ty Cổ phần Yohaland.</p>
+        <p><b>Dữ liệu thu thập:</b> họ tên, số điện thoại, thông tin về đất/tòa nhà và nhu cầu do bạn tự nhập vào form.</p>
+        <p><b>Mục đích:</b> liên hệ, tư vấn và gửi phương án theo yêu cầu của bạn. Không bán hoặc chia sẻ cho bên thứ ba vì mục đích quảng cáo.</p>
+        <p><b>Lưu trữ:</b> trong hệ thống quản lý khách hàng nội bộ, chỉ nhân sự phụ trách tư vấn được truy cập; lưu tối đa [24 tháng] kể từ lần liên hệ cuối, hoặc xóa sớm hơn khi bạn yêu cầu.</p>
+        <p><b>Quyền của bạn:</b> xem, chỉnh sửa, rút lại sự đồng ý hoặc yêu cầu xóa dữ liệu bằng cách gọi/nhắn Zalo 0988 259 320.</p>
+      </div>
+    </details>
+    <div class="copy">© <span id="yr">2026</span> Công ty Cổ phần Yohaland.</div>
+  </div>
+</footer>
+
+<div class="float-bar">
+  <a class="btn btn-light" style="border-color:var(--green)" href="https://zalo.me/0988259320" target="_blank" rel="noopener" data-track="nhan_zalo">Zalo</a>
+  <a class="btn btn-primary" href="tel:0988259320" aria-label="Gọi 0988 259 320" data-track="goi_dien">Gọi ngay</a>
+</div>
+
+<script>
+(function(){
+  // ===== Cấu hình form: dán URL Google Apps Script (Ứng dụng web, kết thúc bằng /exec) vào đây =====
+  var FORM_ENDPOINT = "";
+
+  function track(name, params){ try{ if(window.gtag) gtag('event', name, params||{}); }catch(_){} }
+
+  // Nguồn khách: link dạng yohaland.vn/?src=youtube, ?src=tiktok, ?src=facebook, ?src=zalo
+  var src='';
+  try{var q=new URLSearchParams(location.search);src=q.get('src')||q.get('utm_source')||'';}catch(_){}
+  if(!src&&document.referrer){try{var h=new URL(document.referrer).hostname;if(h!==location.hostname)src=h;}catch(_){}}
+  src=src||'Truy cập trực tiếp';
+
+  // Đếm lượt bấm gọi / Zalo (khách tiềm năng không qua form)
+  document.querySelectorAll('[data-track]').forEach(function(a){
+    a.addEventListener('click',function(){ track(a.getAttribute('data-track'),{nguon:src}); });
+  });
+
+  // ===== Công cụ tính dòng tiền =====
+  var fmt = new Intl.NumberFormat('vi-VN',{maximumFractionDigits:1});
+  function num(id){var v=parseFloat(document.getElementById(id).value);return isFinite(v)&&v>=0?v:0;}
+  function tr(v){return fmt.format(v)+' tr';}
+  var calcUsed=false;
+  function calc(){
+    var rooms=num('c-rooms'), rent=num('c-rent'), occ=Math.min(num('c-occ'),100)/100,
+        opexPct=Math.min(num('c-opex'),100)/100, capex=num('c-capex'),
+        mgmt=document.getElementById('c-mgmt').checked?0.10:0;
+    var rev=rooms*rent*occ, opex=rev*opexPct, fee=rev*mgmt, net=rev-opex-fee, year=net*12;
+    document.getElementById('r-rev').textContent=tr(rev);
+    document.getElementById('r-opex').textContent=tr(opex);
+    document.getElementById('r-mgmt').textContent=mgmt?tr(fee):'Không áp dụng';
+    document.getElementById('r-net').textContent=tr(net);
+    document.getElementById('r-year').textContent=tr(year);
+    document.getElementById('r-payback').textContent=(year>0&&capex>0)?fmt.format(capex/year)+' năm':'–';
+  }
+  var calcForm=document.getElementById('calc-form');
+  calcForm.addEventListener('input',function(){ calc(); if(!calcUsed){calcUsed=true;track('dung_cong_cu_dong_tien');} });
+  calcForm.addEventListener('submit',function(e){e.preventDefault();});
+  calc();
+
+  // ===== Form đặt lịch =====
+  var form=document.getElementById('lead-form'), err=document.getElementById('f-err'),
+      msg=document.getElementById('f-msg'), btn=document.getElementById('f-submit');
+  function show(t){msg.textContent=t;msg.className='form-msg show';}
+  form.addEventListener('submit',function(e){
+    e.preventDefault(); err.textContent=''; msg.className='form-msg';
+    var name=form.ho_ten.value.trim(), phone=form.so_dien_thoai.value.replace(/[^\d+]/g,''), need=form.giai_doan.value;
+    if(!name||!need){err.textContent='Vui lòng nhập họ tên và chọn giai đoạn.';return;}
+    if(!/^(\+?84|0)\d{9,10}$/.test(phone)){err.textContent='Số điện thoại chưa đúng, vui lòng kiểm tra lại.';return;}
+    if(!form.dong_y.checked){err.textContent='Vui lòng tích ô đồng ý để YOHALAND được liên hệ lại với bạn.';return;}
+    if(form.website.value){show('Cảm ơn bạn! YOHALAND sẽ gọi lại trong vòng 1 ngày làm việc.');form.reset();return;} // spam
+    if(!FORM_ENDPOINT){
+      show('Form đang được kết nối. Trong lúc chờ, vui lòng gọi hoặc nhắn Zalo 0988 259 320 để đặt lịch.'); return;
+    }
+    var data=new URLSearchParams();
+    new FormData(form).forEach(function(v,k){data.append(k,v);});
+    data.set('so_dien_thoai',phone);
+    data.append('nguon',src);
+    btn.disabled=true; btn.textContent='Đang gửi...';
+    fetch(FORM_ENDPOINT,{method:'POST',body:data,mode:'no-cors'}).then(function(){
+      show('Cảm ơn bạn! YOHALAND sẽ gọi lại trong vòng 1 ngày làm việc.');
+      track('generate_lead',{nguon:src,giai_doan:need});
+      form.reset();
+    }).catch(function(){
+      show('Chưa gửi được. Vui lòng gọi hoặc nhắn Zalo 0988 259 320.');
+    }).finally(function(){ btn.disabled=false; btn.textContent='Gửi yêu cầu tư vấn'; });
+  });
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
