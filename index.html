@@ -14,12 +14,12 @@
 <meta property="og:url" content="https://yohaland.vn/">
 <meta property="og:title" content="YOHALAND – Xây tòa cho thuê, tính dòng tiền ngay từ bản vẽ">
 <meta property="og:description" content="Thiết kế, hoàn thiện nội thất, setup và vận hành tòa nhà cho thuê tại Hà Nội. Đặt lịch tư vấn với kiến trúc sư.">
-<meta property="og:image" content="https://yohaland.vn/og-image.jpg"><!-- CẦN: ảnh 1200×630 px làm từ logo -->
+<meta property="og:image" content="https://yohaland.vn/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<!-- Biểu tượng tạm trên tab trình duyệt; thay bằng logo thật khi có -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F3D2E'/%3E%3Cpath d='M7 15l9-7 9 7M9 14v10h14V14' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -34,6 +34,7 @@ html{scroll-behavior:smooth}
 body{margin:0;font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;font-size:16px}
 a{color:var(--green)}
 img{max-width:100%;display:block}
+[hidden]{display:none!important}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
 h1,h2,h3{line-height:1.25;margin:0 0 .5em;color:var(--ink)}
 h1{font-size:clamp(2rem,4.6vw,3.2rem);font-weight:700;letter-spacing:-.01em}
@@ -51,17 +52,18 @@ section{padding:80px 0}
 .btn-light{background:var(--white);color:var(--green);border-color:var(--white)}
 
 /* header */
-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:saturate(1.2) blur(6px)}
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--green);font-weight:700;letter-spacing:.14em;font-size:1.05rem}
-.logo-mark{width:36px;height:36px;border-radius:8px;background:var(--green);display:grid;place-items:center}
+.logo img{height:34px;width:auto}
+.foot-logo{height:36px;width:auto;margin-bottom:14px}
 .nav-links{display:flex;gap:24px;list-style:none;margin:0;padding:0}
 .nav-links a{text-decoration:none;color:var(--muted);font-weight:500;font-size:.95rem}
 .nav-links a:hover{color:var(--green)}
 .nav-cta{display:flex;gap:10px;align-items:center}
 .phone{font-weight:600;color:var(--green);text-decoration:none;white-space:nowrap}
 @media (max-width:900px){.nav-links{display:none}}
-@media (max-width:520px){.phone{display:none}}
+@media (max-width:520px){.phone{display:none}.logo img{height:26px}.nav-cta .btn{min-height:40px;padding:0 14px;font-size:.9rem;white-space:nowrap}}
 
 /* hero */
 .hero{background:var(--green);color:var(--white);padding:96px 0 88px}
@@ -97,6 +99,8 @@ header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-
 .why{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:start}
 @media (max-width:860px){.why{grid-template-columns:1fr}}
 .why-list{display:grid;gap:18px}
+.philo{margin-bottom:24px}
+.philo b{color:var(--green)}
 .why-item{display:grid;grid-template-columns:40px 1fr;gap:14px}
 .why-item svg{width:28px;height:28px;color:var(--green)}
 .quote{background:var(--green);color:var(--white);border-radius:var(--radius);padding:32px}
@@ -135,6 +139,15 @@ header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-
 .proj{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--white)}
 .proj-img{aspect-ratio:4/3;background:repeating-linear-gradient(45deg,#E9ECE8,#E9ECE8 12px,#F2F4F1 12px,#F2F4F1 24px);display:grid;place-items:center;color:var(--muted);font-size:.9rem;font-weight:600}
 .proj-body{padding:18px}
+.proj-ph{background:linear-gradient(135deg,var(--green),var(--green-2));color:#fff;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;padding:22px;gap:2px}
+.proj-ph b{font-size:2rem;font-weight:700;line-height:1.1}
+.proj-ph span{color:#C7DCD2;font-size:.95rem;font-weight:500}
+img.proj-img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.proj-media{position:relative}
+.proj-badge{position:absolute;left:12px;bottom:12px;background:rgba(15,61,46,.92);color:#fff;font-size:.82rem;font-weight:600;padding:5px 10px;border-radius:999px}
+.proj-tag{position:absolute;right:12px;top:12px;background:rgba(255,255,255,.92);color:var(--ink);font-size:.75rem;font-weight:600;padding:3px 9px;border-radius:999px}
+.proj-meta{font-size:.88rem;font-weight:600;color:var(--green-2);margin-bottom:.5em}
+.proj-scope{font-size:.85rem;color:var(--muted);border-top:1px solid var(--line);padding-top:10px;margin:0}
 
 /* contact */
 .contact{display:grid;grid-template-columns:1fr 1.2fr;gap:40px}
@@ -179,16 +192,14 @@ footer a{color:#E3EFE9}
 <header>
   <div class="wrap nav">
     <a class="logo" href="#top" aria-label="YOHALAND – về đầu trang">
-      <span class="logo-mark" aria-hidden="true">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
-      </span>
-      YOHALAND
+      <img src="images/logo-green.png" alt="YOHALAND" width="183" height="34">
     </a>
     <ul class="nav-links">
       <li><a href="#dich-vu">Dịch vụ</a></li>
       <li><a href="#quy-trinh">Quy trình</a></li>
       <li><a href="#tinh-dong-tien">Tính dòng tiền</a></li>
       <li><a href="#du-an">Dự án</a></li>
+      <li><a href="#lien-he">Liên hệ</a></li>
     </ul>
     <div class="nav-cta">
       <a class="phone" href="tel:0988259320" data-track="goi_dien">0988 259 320</a>
@@ -208,9 +219,10 @@ footer a{color:#E3EFE9}
       <a class="btn btn-light" href="#lien-he">Đặt lịch tư vấn với kiến trúc sư</a>
       <a class="btn btn-ghost" href="#tinh-dong-tien">Tính thử dòng tiền</a>
     </div>
+    <!-- Số liệu Giám đốc xác nhận 24/11/2026 (file 00_DANH-MUC trên Drive): khoảng 200 phòng đã quản lý; 15 tòa đã thiết kế/thi công nội thất -->
     <div class="hero-facts">
-      <div class="fact"><b>[SỐ] phòng</b><span>đang trực tiếp vận hành tại Hà Nội</span></div>
-      <div class="fact"><b>[SỐ] tòa</b><span>đã thiết kế, thi công nội thất</span></div>
+      <div class="fact"><b>200 phòng</b><span>đã quản lý, vận hành tại Hà Nội</span></div>
+      <div class="fact"><b>15 tòa</b><span>đã thiết kế, thi công nội thất</span></div>
       <div class="fact"><b>1 đầu mối</b><span>từ phương án đến vận hành</span></div>
     </div>
   </div>
@@ -277,6 +289,7 @@ footer a{color:#E3EFE9}
     <div>
       <div class="eyebrow">Vì sao chọn YOHALAND</div>
       <h2>Thiết kế bởi người đang vận hành</h2>
+      <p class="muted philo">Triết lý của chúng tôi: <b>Đẹp × Hiệu quả × Vận hành được</b>. Giá trị một công trình không chỉ ở vẻ đẹp kiến trúc, mà còn ở trải nghiệm người ở, hiệu quả kinh tế và khả năng vận hành bền vững.</p>
       <div class="why-list">
         <div class="why-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-5h6v5"/></svg>
@@ -364,16 +377,43 @@ footer a{color:#E3EFE9}
   </div>
 </section>
 
+<!-- Dự án: thông tin Giám đốc điền 24/11/2026, chủ nhà đã đồng ý đăng ảnh. Ảnh 1200×900 trong /images.
+     Dự án 2 và 3 dùng phối cảnh (có nhãn "Phối cảnh thiết kế"); khi có ảnh chụp thực tế thì thay và bỏ nhãn. -->
 <section id="du-an">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Dự án</div>
       <h2>Một số công trình đã thực hiện</h2>
+      <p class="muted">Tòa căn hộ cho thuê tại Hà Nội do YOHALAND thiết kế và đồng hành.</p>
     </div>
     <div class="grid-3">
-      <div class="proj"><div class="proj-img">[ẢNH DỰ ÁN 1]</div><div class="proj-body"><h3>[Tên dự án]</h3><p class="muted">[Quận] · [Số phòng] phòng · [Hạng mục: thiết kế / nội thất / vận hành]</p></div></div>
-      <div class="proj"><div class="proj-img">[ẢNH DỰ ÁN 2]</div><div class="proj-body"><h3>[Tên dự án]</h3><p class="muted">[Quận] · [Số phòng] phòng · [Hạng mục]</p></div></div>
-      <div class="proj"><div class="proj-img">[ẢNH DỰ ÁN 3]</div><div class="proj-body"><h3>[Tên dự án]</h3><p class="muted">[Quận] · [Số phòng] phòng · [Hạng mục]</p></div></div>
+      <div class="proj">
+        <div class="proj-media"><img class="proj-img" src="images/du-an-1.jpg" alt="Phòng cho thuê tại Ngọc Hồi Apartment do YOHALAND thiết kế" width="1200" height="900" loading="lazy"><span class="proj-badge">21 phòng · 6 tầng · đất 137 m²</span></div>
+        <div class="proj-body">
+          <h3>Ngọc Hồi Apartment</h3>
+          <p class="proj-meta">Ngọc Hồi, Hà Nội · Hoàn thành 2025</p>
+          <p class="muted">Mặt bằng tối ưu số phòng, dành cho khách thuê là người đi làm.</p>
+          <p class="proj-scope">Thiết kế kiến trúc · Nội thất · Giám sát tác giả</p>
+        </div>
+      </div>
+      <div class="proj">
+        <div class="proj-media"><img class="proj-img" src="images/du-an-2.jpg" alt="Phối cảnh căn hộ studio tại Lĩnh Nam Apartment" width="1200" height="900" loading="lazy"><span class="proj-badge">19 phòng · 6 tầng · đất 100 m²</span><span class="proj-tag">Phối cảnh thiết kế</span></div>
+        <div class="proj-body">
+          <h3>Lĩnh Nam Apartment</h3>
+          <p class="proj-meta">Lĩnh Nam, Hà Nội · Hoàn thành 2023</p>
+          <p class="muted">Tối ưu không gian trên lô đất 100 m², phòng nào cũng có thông gió và ánh sáng tự nhiên.</p>
+          <p class="proj-scope">Thiết kế kiến trúc · Nội thất · Giám sát tác giả</p>
+        </div>
+      </div>
+      <div class="proj">
+        <div class="proj-media"><img class="proj-img" src="images/du-an-3.jpg" alt="Phối cảnh mặt tiền Định Công Apartment" width="1200" height="900" loading="lazy"><span class="proj-badge">22 phòng · 7 tầng · đất 109 m²</span><span class="proj-tag">Phối cảnh thiết kế</span></div>
+        <div class="proj-body">
+          <h3>Định Công Apartment</h3>
+          <p class="proj-meta">Định Công, Hà Nội · Hoàn thành 2026</p>
+          <p class="muted">Dành cho người trẻ làm văn phòng, thu nhập cao; nội thất tối ưu, hợp gu người trẻ.</p>
+          <p class="proj-scope">Tư vấn xây dựng · Thiết kế kiến trúc · Nội thất · Giám sát tác giả · Thi công nội thất</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -389,7 +429,7 @@ footer a{color:#E3EFE9}
         <a class="btn btn-ghost" href="https://zalo.me/0988259320" target="_blank" rel="noopener" data-track="nhan_zalo">Nhắn Zalo</a>
       </div>
       <p><b>Website:</b> yohaland.vn</p>
-      <p><b>Văn phòng:</b> [ĐỊA CHỈ VĂN PHÒNG], Hà Nội</p>
+      <p><b>Văn phòng:</b> 50 phố Đại Linh, phường Đại Mỗ, TP Hà Nội</p>
     </div>
     <form class="card" id="lead-form" novalidate>
       <div class="form-row">
@@ -437,18 +477,20 @@ footer a{color:#E3EFE9}
   <div class="wrap">
     <div class="foot">
       <div>
+        <img class="foot-logo" src="images/logo-white.png" alt="YOHALAND" width="194" height="36" loading="lazy">
         <h3>CÔNG TY CỔ PHẦN YOHALAND</h3>
         <p>Phát triển bất động sản dòng tiền: thiết kế, hoàn thiện nội thất, setup và vận hành tòa nhà cho thuê.</p>
-        <p>MST: [MÃ SỐ THUẾ]<br>Địa chỉ: [ĐỊA CHỈ ĐĂNG KÝ]</p>
+        <p>Mã số doanh nghiệp/MST: 0109430184<br>Địa chỉ: Số 50 Đại Linh, phường Đại Mỗ, TP Hà Nội</p>
       </div>
       <div>
         <h3>Liên hệ</h3>
         <p>Hotline/Zalo: <a href="tel:0988259320" data-track="goi_dien">0988 259 320</a><br>yohaland.vn</p>
       </div>
+      <!-- Mở lại khi có link kênh:
       <div>
         <h3>Kênh</h3>
-        <p>[YouTube]<br>[TikTok]<br>[Facebook]</p>
-      </div>
+        <p><a href="[link YouTube]">YouTube</a><br><a href="[link TikTok]">TikTok</a><br><a href="[link Facebook]">Facebook</a></p>
+      </div> -->
     </div>
     <details class="privacy" id="bao-mat">
       <summary>Thông báo xử lý dữ liệu cá nhân</summary>
@@ -456,7 +498,7 @@ footer a{color:#E3EFE9}
         <p><b>Bên xử lý:</b> Công ty Cổ phần Yohaland.</p>
         <p><b>Dữ liệu thu thập:</b> họ tên, số điện thoại, thông tin về đất/tòa nhà và nhu cầu do bạn tự nhập vào form.</p>
         <p><b>Mục đích:</b> liên hệ, tư vấn và gửi phương án theo yêu cầu của bạn. Không bán hoặc chia sẻ cho bên thứ ba vì mục đích quảng cáo.</p>
-        <p><b>Lưu trữ:</b> trong hệ thống quản lý khách hàng nội bộ, chỉ nhân sự phụ trách tư vấn được truy cập; lưu tối đa [24 tháng] kể từ lần liên hệ cuối, hoặc xóa sớm hơn khi bạn yêu cầu.</p>
+        <p><b>Lưu trữ:</b> trong hệ thống quản lý khách hàng nội bộ, chỉ nhân sự phụ trách tư vấn được truy cập; lưu tối đa 24 tháng kể từ lần liên hệ cuối, hoặc xóa sớm hơn khi bạn yêu cầu.</p>
         <p><b>Quyền của bạn:</b> xem, chỉnh sửa, rút lại sự đồng ý hoặc yêu cầu xóa dữ liệu bằng cách gọi/nhắn Zalo 0988 259 320.</p>
       </div>
     </details>
